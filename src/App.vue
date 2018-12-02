@@ -1,10 +1,36 @@
 <template> <v-app>
-    <v-navigation-drawer temporary absolute dark v-model="sideNav">
+    <v-navigation-drawer temporary absolute dark
+      :mini-variant.sync="mini"
+      v-model="sideNav">
+
+      <v-toolbar flat class="transparent">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-avatar>
+              <img src="./assets/anish-ghimire.jpg"
+                alt="Anish Ghimire"
+              >
+            </v-list-tile-avatar>
+
+            <v-list-tile-content>
+              <v-list-tile-title>Anish Ghimire</v-list-tile-title>
+            </v-list-tile-content>
+            <v-btn
+              icon
+              @click.stop="mini = !mini"
+            >
+              <v-icon>chevron_left</v-icon>
+            </v-btn>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
+
       <v-list>
         <v-list-tile
           v-for="item in menuItems"
           :key="item.title"
           :to="item.link">
+
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -48,7 +74,8 @@ export default {
         { icon: 'work', title: 'Projects', link: '/projects' },
         { icon: 'description', title: 'Blog', link: '/blog' },
         { icon: 'contact_phone', title: 'Contact Me', link: '/contact' }
-      ]
+      ],
+      mini: true
     }
   }
 }

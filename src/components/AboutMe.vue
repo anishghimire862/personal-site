@@ -20,17 +20,20 @@
           >
             <v-list-tile slot="activator">
               <v-list-tile-content>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                <v-list-tile-title> {{ item.title }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
 
             <v-list-tile
               v-for="subItem in item.items"
               :key="subItem.title"
-              @click=""
+              
             >
               <v-list-tile-content>
-                <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                <v-list-tile-title v-if="item.isWebsite"> 
+                  <a :href="'//' + subItem.title" target="_blank"> {{ subItem.title }} </a> 
+                </v-list-tile-title>
+                <v-list-tile-title v-else> {{ subItem.title }} </v-list-tile-title>
               </v-list-tile-content>
 
               <v-list-tile-action>
@@ -74,6 +77,7 @@ export default {
       {
         action: 'web',
         title: 'Website',
+        isWebsite: true,
         items: [
           { title: 'www.anishghimire.com.np' }
         ]
@@ -81,8 +85,13 @@ export default {
        {
          action: 'work',
          title: 'Project',
+         isWebsite: true,
          items: [
-           { title: 'www.saangai.com' }
+           { title: 'www.saangai.com' },
+           { title: 'college-magazine.000webhostapp.com' },
+           { title: 'www.bikramghimire.com.np' },
+           { title: 'samatva.000webhostapp.com' },
+           { title: 'www.krrish.com.np' }
          ]
        },
        {

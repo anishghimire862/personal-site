@@ -19,7 +19,6 @@
         label="Name"
         required
       ></v-text-field>
-      <p>Your name is: {{ name  }}  </p>
       <v-textarea
         v-model="message"
         name="input-7-1"

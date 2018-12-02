@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-img
-      :src="'http://anishghimire.com.np/images/anishGhimire.jpg'"
+      :src="require('../assets/anish-ghimire.jpg')"
       aspect-ratio="1.9" alt="Anish Ghimire"
     >
     </v-img>
@@ -10,7 +10,7 @@
         <v-card dark>
           <v-card-title primary-title>
           <div>
-            <div class="headline">Anish Ghimire</div>
+            <h1 class="headline">Anish Ghimire</h1>
             <p class="grey--text ml-0">Urlabari, Morang</p>
           </div>
         </v-card-title>
@@ -35,8 +35,10 @@
 </template>
 <script>
 export default {
-  data: () => ({
-    show: false
-  })
+  data () {
+    return {
+      show: false
+    }
+  }
 }
 </script>
