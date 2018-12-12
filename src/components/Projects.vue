@@ -48,7 +48,7 @@ export default {
     return {
       projects: [
         {
-          name: 'Saangai',
+          name: 'Saangai - frontend developer',
           link: 'www.saangai.com',
           image: require('../assets/saangai.png'),
           description: 'Saangai is a concept, concept of bringing ' +

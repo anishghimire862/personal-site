@@ -1,55 +1,33 @@
 <template>
   <div>
-    <v-container>
-      <v-alert
-        :value="alert"
-        type="error"
-       >
-      Please fill all the required fields.
-      </v-alert>
-      <v-form @submit.prevent="submit">
-      <v-text-field
-        v-model="email"
-        label="E-mail"
-        required
-      ></v-text-field>
-       <v-text-field
-        v-model="name"
-        type="text"
-        label="Name"
-        required
-      ></v-text-field>
-      <v-textarea
-        v-model="message"
-        name="input-7-1"
-        box
-        label="Type your message here..."
-        auto-grow
-       ></v-textarea>
-      <v-btn color="success" type="submit">Submit</v-btn>
-      </v-form>
-    </v-container>
+    <v-layout>
+      <v-flex xs3 sm2 md3>
+      </v-flex>
+      <v-flex xs6 sm8 md6>
+        <v-card class="mt-5 pa-5 text-xs-center">
+          <a
+            href="mailto:anishghimire862@gmail.com?Subject=Contact me"
+          >
+            Mail me 
+          </a>
+          <br>
+          <p>
+            anishghimire862@gmail.com
+          </p>
+          <a
+            href="tel:+9779844680862"
+            
+          >
+            Call me for a cup of coffee
+          </a>
+          <p>+9779844680862</p>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
-<script>
-export default {
-  data () {
-    return {
-      email: null,
-      name: null,
-      message: null,
-      alert: false
-
-    }
-  },
-  methods: {
-    submit () {
-      if (!this.email || !this.password || !this.message) {
-        this.alert = true
-      } else {
-        this.alert = false
-      }
-    }
+<style>
+  a {
+    text-decoration: none;
   }
-}
-</script>
+</style>
