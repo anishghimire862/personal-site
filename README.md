@@ -1,6 +1,6 @@
 
 
-## Project setupssssss
+## Project setup
 ```
 npm install
 ```
